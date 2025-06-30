@@ -2,7 +2,7 @@
 
 import { PosStore } from "@point_of_sale/app/store/pos_store";
 import { patch } from "@web/core/utils/patch";
-import { CustomOrderReceipt } from "@pos_receipt_customisation/js/CustomOrderReceipt";
+import { CustomOrderReceipt } from "@pos_receipt/js/CustomOrderReceipt";
 
 patch(PosStore.prototype, {
     async printReceipt({

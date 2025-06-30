@@ -10,7 +10,7 @@ import { ReceiptScreen } from "@point_of_sale/app/screens/receipt_screen/receipt
 import { omit } from "@web/core/utils/objects";
 
 export class CustomOrderReceipt extends OrderReceipt {
-    static template = "pos_receipt_customisation.OrderReceipt";
+    static template = "pos_receipt.OrderReceipt";
     static components = {
         Orderline,
         OrderWidget,
@@ -32,6 +32,10 @@ export class CustomOrderReceipt extends OrderReceipt {
     }
 }
 
+// Patch the ReceiptScreen to use our CustomOrderReceipt
 patch(ReceiptScreen, {
-    components: { ...ReceiptScreen.components, CustomOrderReceipt },
+    components: { 
+        ...ReceiptScreen.components, 
+        OrderReceipt: CustomOrderReceipt 
+    },
 });
